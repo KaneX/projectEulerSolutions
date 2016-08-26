@@ -9,21 +9,27 @@ tensList = ['Zero', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seven
 def writeHundred(val):
     rtn = ''
 
-    if val > 100:
+    if val >= 100:
         rtn += wordList[val // 100] + ' Hundred'
         val %= 100
         if val != 0:
+            # projecteuler.net
+            #rtn += ' and '
+            # hackerrank.com
             rtn += ' '
+        else:
+            val = -1
     if val > 19:
         rtn += tensList[val // 10]
         val %= 10
         if val != 0:
             rtn += ' ' + wordList[val]
-    else:
+    elif val >= 0:
         rtn += wordList[val]
 
     return rtn
 
+# solution to ProjectEuler+ on hackerrank.com
 T = int(input().strip())
 for a0 in range(T):
     N = int(input().strip())
@@ -57,3 +63,17 @@ for a0 in range(T):
         rtnStr += writeHundred(N)
 
     print(rtnStr)
+
+
+'''
+# solution to Q17 on projecteuler.net
+
+total = 0
+for i in range(1, 1000):
+
+    word = writeHundred(i)
+    print(word)
+    total += len(word.replace(' ', ''))
+
+print(total+11)
+'''
