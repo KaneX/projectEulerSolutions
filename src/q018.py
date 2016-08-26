@@ -2,7 +2,7 @@ import sys
 import math
 
 """
-This solution can be used for both Q18 and Q67 on projecteuler.net
+This solution can be used for both Q18 and Q67 on projecteuler.net and hackerrank.com
 """
 
 T = int(input().strip())
