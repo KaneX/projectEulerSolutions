@@ -24,14 +24,20 @@ def mul(aList, b):
 
     return res
 
-factList = [[1], [1]]
+# factList = [[1], [1]]
+factList = [1, 1]
 
 for i in range(1, 1000):
-    factList.append(mul(factList[i], (i + 1)))
+    # implement big integer multiplication by myself
+    # factList.append(mul(factList[i], (i + 1)))
+
+    # in fact python supports big integer operations natively
+    factList.append(factList[i] * (i + 1))
 
 T = int(input().strip())
 
 for a0 in range(T):
     N = int(input().strip())
-    print(sum(factList[N]))
+    sumList = [int(x) for x in str(factList[N])]
+    print(sum(sumList))
 
