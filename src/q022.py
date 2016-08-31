@@ -16,6 +16,8 @@ for rank in range(len(nameList)):
     score *= rank + 1
     scoreList.append(score)
 
+# print(sum(scoreList))
+
 Q = int(input().strip())
 for a0 in range(Q):
     name = input().strip()
