@@ -41,7 +41,7 @@ def isAbundant(val):
     else:
         return False
 
-
+# solution to Q23 on hackerrank.com
 T = int(input().strip())
 for a0 in range(T):
     N = int(input().strip())
@@ -55,3 +55,20 @@ for a0 in range(T):
             rtn = True
             break
     print('YES' if rtn else 'NO')
+
+'''
+# solution to Q23 on projecteuler.net
+abundantList = []
+for i in range(12, maxSize - 11):
+    if isAbundant(i):
+        abundantList.append(i)
+
+candidateList = [x for x in range(maxSize + 1)]
+for i in range(len(abundantList)):
+    for j in range(i, len(abundantList)):
+        if (abundantList[i] + abundantList[j]) < len(candidateList):
+            candidateList[abundantList[i] + abundantList[j]] = 0
+        else:
+            break
+print(sum(candidateList))
+'''
