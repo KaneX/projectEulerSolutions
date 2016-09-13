@@ -4,7 +4,7 @@ import math
 N = int(input().strip())
 
 rtn = 0
-for i in range(10**(N-1), 10**N):
+for i in range(100, 600000):
     current = i
     s = 0
     while current != 0:
@@ -12,6 +12,6 @@ for i in range(10**(N-1), 10**N):
         current //= 10
     if s == i:
         rtn += s
-        print(i)
+        # print(i)
 
 print(rtn)
