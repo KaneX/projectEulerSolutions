@@ -4,7 +4,7 @@ import math
 N = int(input().strip())
 
 rtn = 0
-for i in range(100, 600000):
+for i in range(100, 600000):    # brutal force
     current = i
     s = 0
     while current != 0:
